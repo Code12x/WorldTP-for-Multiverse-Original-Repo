@@ -19,8 +19,11 @@ public class AdvancedWorldTPMenu {
 
         int numberOfWorlds = plugin.getConfig().getStringList("menuGroupList").size();
         int numberOfSlots = 9;
-        for(int i=9; (i/numberOfWorlds)<1; i+=9){
-            numberOfSlots = i;
+
+        int j = 9;
+        while((j/numberOfWorlds) < 1){
+            j += 9;
+            numberOfSlots = j;
         }
 
         tpMenu = Bukkit.createInventory(null, numberOfSlots, "World Menu");
