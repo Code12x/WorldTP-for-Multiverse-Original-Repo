@@ -20,7 +20,7 @@ public class CommandDeleteWorld implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
-        if(!(sender.hasPermission("deleteworld"))){
+        if(!(sender.hasPermission("worldtp.deleteworld"))){
             sender.sendMessage(ChatColor.YELLOW + "You do not have the necessary permission to perform this command.");
             return true;
         }
