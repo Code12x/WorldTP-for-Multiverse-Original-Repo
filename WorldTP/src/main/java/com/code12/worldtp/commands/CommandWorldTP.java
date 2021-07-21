@@ -28,7 +28,7 @@ public class CommandWorldTP implements CommandExecutor {
                 return true;
             }
 
-            if(player.hasPermission("WorldTP.worldtp")){
+            if(player.hasPermission("worldTP.worldtp")){
                 AdvancedWorldTPMenu advancedMenu = new AdvancedWorldTPMenu(plugin);
                 player.openInventory(advancedMenu.tpMenu);
             }else{
