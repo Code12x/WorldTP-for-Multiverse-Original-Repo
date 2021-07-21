@@ -22,7 +22,7 @@ public class CommandEditWorld implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
         // makes sure the sender is an admin
-        if(!(sender.hasPermission("registerworld"))){
+        if(!(sender.hasPermission("worldtp.editworld"))){
             sender.sendMessage(ChatColor.YELLOW + "You don't have the necessary permission to use this command.");
             return true;
         }
