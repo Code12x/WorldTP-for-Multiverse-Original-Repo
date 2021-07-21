@@ -27,7 +27,7 @@ public class CommandReloadWorlds implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
 
-        if(!sender.hasPermission("renameworlds")){
+        if(!sender.hasPermission("worldtp.reloadworlds")){
             sender.sendMessage(ChatColor.YELLOW + "You don't have the necessary permission to use this command.");
             return true;
         }
