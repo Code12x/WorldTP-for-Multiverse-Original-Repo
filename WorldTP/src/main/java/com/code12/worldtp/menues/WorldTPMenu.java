@@ -28,8 +28,11 @@ public class WorldTPMenu{
         }
 
         int numberOfSlots = 9;
-        for(int i=9; (i/notAdminWorlds.size())<1; i+=9){
-            numberOfSlots = i;
+
+        int j = 9;
+        while((j/notAdminWorlds.size()) < 1){
+            j += 9;
+            numberOfSlots = j;
         }
 
         tpMenu = Bukkit.createInventory(null, numberOfSlots, "World Menu");
