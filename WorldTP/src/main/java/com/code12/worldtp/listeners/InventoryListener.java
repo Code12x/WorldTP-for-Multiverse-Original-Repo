@@ -55,6 +55,10 @@ public class InventoryListener implements Listener {
                             }
                         }
 
+                        if(plugin.getConfig().getLocation("menuGroupID." + menuGroup + ".WorldTPWorldSpawnPoint") != null){
+                            locationToTP = plugin.getConfig().getLocation("menuGroupID." + menuGroup + ".WorldTPWorldSpawnPoint");
+                        }
+
                         plugin.getConfig().set("playerLocations."+player.getName()+"."+worldGroupToLeave, playerLocation);
 
                         if(locationToTP != null){
