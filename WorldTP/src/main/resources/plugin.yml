@@ -26,3 +26,19 @@ commands:
     description: Reregisters all the worlds for the WorldTP menu.
     usage: /<command>
     permission: worldtp.reloadworlds
+  setlobby:
+    description: Sets a world to be the world that players spawn at when they join the server.
+    usage: /<command>
+    permission: worldtp.setlobby
+  setworldtpworldspawnpoint:
+    description: Sets a location that players teleport to when they enter that world.
+    usage: /<command>
+    permission: worldtp.setworldtpworldspawnpoint
+  removelobby:
+    description: Removes the lobby spawn point location from the server.
+    usage: /<command>
+    permission: worldtp.removelobby
+  removeworldtpworldspawnpoint:
+    description: Removes the WorldTP World Spawn Point for the world that the player is in when the command is run.
+    usage: /<command>
+    permission: worldtp.removeworldtpworldspawnpoint
