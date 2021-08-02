@@ -2,14 +2,10 @@ package com.code12.worldtp;
 
 import com.code12.worldtp.commands.*;
 import com.code12.worldtp.listeners.InventoryListener;
+import com.code12.worldtp.listeners.PlayerJoinListener;
 import org.bukkit.configuration.file.FileConfigurationOptions;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-
-//Experimental for a bug
-import com.onarandombox.MultiverseCore.MultiverseCore;
-import com.onarandombox.MultiverseCore.api.MVWorldManager;
-import com.onarandombox.MultiverseCore.api.MultiverseWorld;
 
 public final class WorldTP extends JavaPlugin {
 
@@ -23,6 +19,7 @@ public final class WorldTP extends JavaPlugin {
         PluginManager pm = getServer().getPluginManager();
         // Registering an inventory listener for when a player clicks on the world he wants to tp to from the menu.
         pm.registerEvents(new InventoryListener(this), this);
+        pm.registerEvents(new PlayerJoinListener(this), this);
 
         // getting all the player commands
         getCommand("worldtp").setExecutor(new CommandWorldTP(this)); // anyone can access
@@ -30,6 +27,10 @@ public final class WorldTP extends JavaPlugin {
         getCommand("deleteworld").setExecutor(new CommandDeleteWorld(this)); // only admins
         getCommand("listworlds").setExecutor(new CommandListWorlds(this)); // anyone
         getCommand("reloadworlds").setExecutor(new CommandReloadWorlds(this));// only admins
+        getCommand("setlobby").setExecutor(new CommandSetLobby(this)); // only admins
+        getCommand("setworldtpworldspawnpoint").setExecutor(new CommandSetWorldTPWorldSpawnPoint(this)); //admins only
+        getCommand("removelobby").setExecutor(new CommandRemoveLobby(this)); //admins only
+        getCommand("removeworldtpworldspawnpoint").setExecutor(new CommandRemoveWorldTPWorldSpawnPoint(this));
 
         saveConfig();
     }
